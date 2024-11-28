@@ -1,0 +1,143 @@
+/* Define custom colors and common styles */
+:root {
+    --green-custom-light: #e0ffe8;
+    --green-custom-dark: #4caf50;
+    --text-color: #333;
+}
+
+/* Background styles */
+.background-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../head.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center;
+    z-index: -1; /* Send behind other content */
+    opacity: 0.8; /* Add transparency if needed */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .background-logo {
+        display: block; /* Show background image on mobile */
+    }
+
+    .logo-image {
+        display: none; /* Hide the logo image */
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    .background-logo {
+        display: none; /* Hide background image on desktop */
+    }
+
+    .logo-image {
+        display: block; /* Show the logo image */
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes wave {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-20px); }
+    }
+    
+    /* Apply animations */
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+    
+    .animate-fadeInDown {
+        animation: fadeInDown 1s ease-in-out forwards;
+    }
+    
+    .animate-wave {
+        animation: wave 3s linear infinite;
+    }
+
+    /* Keyframes for changing wave color */
+@keyframes waveColorChange {
+    0% {
+      fill: rgba(255, 255, 255, 0.2); /* Initial color */
+    }
+    25% {
+      fill: rgba(144, 238, 144, 0.4); /* Light green */
+    }
+    50% {
+      fill: rgba(60, 179, 113, 0.4); /* Medium green */
+    }
+    75% {
+      fill: rgbargba(3, 82, 30, 0.8);
+
+      /* Teal */
+    }
+    100% {
+      fill: rgba(255, 255, 255, 0.2); /* Back to initial color */
+    }
+  }
+  
+  /* Apply animation to the wave path */
+  .wave-path {
+    animation: waveColorChange 6s infinite;
+  }
+  
+  
+  /* Add smooth wave motion (optional) */
+  .animate-wave-color {
+    animation: wave 3s linear infinite, waveColorChange 6s infinite;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+  }
+  /* Wave Background Animation */
+@keyframes waveBackgroundChange {
+    0%, 100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+  }
+  
+  .animate-wave-background {
+    animation: waveBackgroundChange 6s infinite linear;
+    background-size: 400% 400%;
+  }
+  
+  /* Smooth Text Shadow for Title */
+  h1 {
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Adjust Image Animation */
+  .fotopmb img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Content Shadow */
+  p {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+    
+
+}

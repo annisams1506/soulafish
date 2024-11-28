@@ -1,0 +1,17 @@
+/* Wave Animation */
+@keyframes wave-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-200px); }
+}
+
+@keyframes wave-color {
+    0% { fill: rgba(15, 143, 28, 0.8); }
+    25% { fill: rgba(13, 121, 24, 0.6); }
+    50% { fill: rgba(3, 82, 30, 0.4); }
+    75% { fill: rgba(31, 157, 44, 0.2); }
+    100% { fill: rgba(15, 143, 28, 0.8); }
+}
+
+.wave-path {
+    animation: wave-move 6s linear infinite, wave-color 6s linear infinite;
+}
